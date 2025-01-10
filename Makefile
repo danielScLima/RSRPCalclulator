@@ -515,6 +515,7 @@ DIST          = ../../../Qt/6.7.2/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/6.7.2/gcc_64/mkspecs/features/qt_config.prf \
 		../../../Qt/6.7.2/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../Qt/6.7.2/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../Qt/6.7.2/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/6.7.2/gcc_64/mkspecs/features/toolchain.prf \
 		../../../Qt/6.7.2/gcc_64/mkspecs/features/default_pre.prf \
@@ -666,7 +667,7 @@ TARGET        = RSRPCalculator
 first: all
 ####### Build rules
 
-RSRPCalculator: ui_mainwindow.h ui_BaseStationForm.h ui_SectorForm.h ui_SelectBaseStationForm.h ui_ReceiverForm.h ui_TerrainProfile.h $(OBJECTS)  
+RSRPCalculator: ui_mainwindow.h ui_BaseStationForm.h ui_SectorForm.h ui_SelectBaseStationForm.h ui_ReceiverForm.h ui_TerrainProfile.h ui_mainwindowTMP.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET)  $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: RSRPCalculator.pro ../../../Qt/6.7.2/gcc_64/mkspecs/linux-g++/qmake.conf ../../../Qt/6.7.2/gcc_64/mkspecs/features/spec_pre.prf \
@@ -991,6 +992,7 @@ Makefile: RSRPCalculator.pro ../../../Qt/6.7.2/gcc_64/mkspecs/linux-g++/qmake.co
 		../../../Qt/6.7.2/gcc_64/mkspecs/features/qt_config.prf \
 		../../../Qt/6.7.2/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../Qt/6.7.2/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../Qt/6.7.2/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/6.7.2/gcc_64/mkspecs/features/toolchain.prf \
 		../../../Qt/6.7.2/gcc_64/mkspecs/features/default_pre.prf \
@@ -1340,6 +1342,7 @@ Makefile: RSRPCalculator.pro ../../../Qt/6.7.2/gcc_64/mkspecs/linux-g++/qmake.co
 ../../../Qt/6.7.2/gcc_64/mkspecs/features/qt_config.prf:
 ../../../Qt/6.7.2/gcc_64/mkspecs/linux-g++/qmake.conf:
 ../../../Qt/6.7.2/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../Qt/6.7.2/gcc_64/mkspecs/features/exclusive_builds.prf:
 ../../../Qt/6.7.2/gcc_64/mkspecs/features/toolchain.prf:
 ../../../Qt/6.7.2/gcc_64/mkspecs/features/default_pre.prf:
@@ -1384,7 +1387,7 @@ distdir: FORCE
 	$(COPY_FILE) --parents ../../../Qt/6.7.2/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.h Pathloss/Pathloss.h Pathloss/IPathlossCalculation.h Pathloss/Parameter.h Pathloss/PathlossModel.h Pathloss/OkumuraHataPathlossModel.h Pathloss/PathlossCalculation.h Core/Sector.h Core/BaseStation.h Core/Antenna.h RSRP/IRsrpCalculation.h RSRP/RsrpCalculation.h RSRP/RsrpInitialization.h RuskiTest/rsrptestcase.h AntennaLoss/AntennaLossFileParser.h RuskiTest/AntennaLossFileParserTest.h AntennaLoss/AntennaLossFileProvider.h AntennaLoss/IAntennaLossFileProvider.h MapProvider/Enviroment.h MapProvider/IMapDataProvider.h MapProvider/MapDataProvider.h MapProvider/MapParser.h MapProvider/Pixel.h AntennaLoss/AntennaLossVerticalCalculator.h AntennaLoss/AntennaLossHorizontalCalculator.h AntennaLoss/AnetnnaLossCalculator.h Core/SectorsControler.h Core/AreaCalculation.h Core/PixelXY.h Core/Receiver.h Image.h JobQueue.h ThreadPool.h PixelWorker.h AntennaLoss/AntennaLossCalculation.h Worker.h BaseStationForm.h SectorForm.h DataProvider.h SelectBaseStationForm.h customstyle.h ImagePainter.h Pathloss/Cost231HataModel.h ScribbleArea.h ReceiverForm.h Rectangle.h Canvas.h DrawRectangle.h MapProvider/wgs84_do_puwg92.h MapProvider/GeographicalCoordinatesConverter.h TerrainProfile.h TerrainCanvas.h Display/NetworkObjectWizualizator.h Display/GuiConstans.h Core/modeltypes.h Interference/InterferenceCalculator.h Common/FrequencyBands.h Workers/PixelWorkerForInterference.h Workers/PixelWorkerForSNIR.h Workers/PixelWorkerForModulation.h Common/ModulationSchemes.h Common/Units.h Workers/PixelWorkerForRsrq.h Core/Controler.h Throughput/ThroughputData.h Throughput/ThroughputCalculator.h $(DISTDIR)/
 	$(COPY_FILE) --parents main.cpp mainwindow.cpp Pathloss/Parameter.cpp Pathloss/PathlossModel.cpp Pathloss/OkumuraHataPathlossModel.cpp Pathloss/PathlossCalculation.cpp Core/BaseStation.cpp Core/Antenna.cpp Core/Sector.cpp RSRP/RsrpCalculation.cpp RSRP/RsrpInitialization.cpp RuskiTest/rsrptestcase.cpp AntennaLoss/AntennaLossFileParser.cpp RuskiTest/AntennaLossFileParserTest.cpp AntennaLoss/AntennaLossFileProvider.cpp MapProvider/MapDataProvider.cpp MapProvider/MapParser.cpp MapProvider/Pixel.cpp AntennaLoss/AntennaLossVerticalCalculator.cpp AntennaLoss/AntennaLossHorizontalCalculator.cpp AntennaLoss/AnetnnaLossCalculator.cpp Core/SectorsControler.cpp Core/AreaCalculation.cpp Core/PixelXY.cpp Core/Receiver.cpp Image.cpp JobQueue.cpp ThreadPool.cpp PixelWorker.cpp AntennaLoss/AntennaLossCalculation.cpp Worker.cpp BaseStationForm.cpp SectorForm.cpp SelectBaseStationForm.cpp ImagePainter.cpp Pathloss/Cost231HataModel.cpp ScribbleArea.cpp ReceiverForm.cpp Rectangle.cpp Canvas.cpp DrawRectangle.cpp MapProvider/wgs84_do_puwg92.cc MapProvider/GeographicalCoordinatesConverter.cpp TerrainProfile.cpp TerrainCanvas.cpp Display/NetworkObjectWizualizator.cpp DataProvider.cpp Core/modeltypes.cpp Interference/InterferenceCalculator.cpp Workers/PixelWorkerForInterference.cpp Workers/PixelWorkerForSNIR.cpp Workers/PixelWorkerForModulation.cpp Common/Units.cpp Workers/PixelWorkerForRsrq.cpp Core/Controler.cpp Throughput/ThroughputData.cpp Throughput/ThroughputCalculator.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents mainwindow.ui BaseStationForm.ui SectorForm.ui SelectBaseStationForm.ui ReceiverForm.ui TerrainProfile.ui $(DISTDIR)/
+	$(COPY_FILE) --parents mainwindow.ui BaseStationForm.ui SectorForm.ui SelectBaseStationForm.ui ReceiverForm.ui TerrainProfile.ui mainwindowTMP.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -3144,6 +3147,10 @@ moc_DrawRectangle.cpp: DrawRectangle.h \
 		../../../Qt/6.7.2/gcc_64/include/QtCore/qcoreevent.h \
 		../../../Qt/6.7.2/gcc_64/include/QtCore/qset.h \
 		../../../Qt/6.7.2/gcc_64/include/QtCore/qhash.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/QObject \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/qobject.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/qobject_impl.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/qbindingstorage.h \
 		moc_predefs.h \
 		../../../Qt/6.7.2/gcc_64/libexec/moc
 	/home/daniel.sucupira/Qt/6.7.2/gcc_64/libexec/moc $(DEFINES) --include /home/daniel.sucupira/Documentos/GitHub/RSRPCalclulator/moc_predefs.h -I/home/daniel.sucupira/Qt/6.7.2/gcc_64/mkspecs/linux-g++ -I/home/daniel.sucupira/Documentos/GitHub/RSRPCalclulator -I/home/daniel.sucupira/Qt/6.7.2/gcc_64/include -I/home/daniel.sucupira/Qt/6.7.2/gcc_64/include/QtWidgets -I/home/daniel.sucupira/Qt/6.7.2/gcc_64/include/QtGui -I/home/daniel.sucupira/Qt/6.7.2/gcc_64/include/QtCore -I/usr/include/c++/13 -I/usr/include/x86_64-linux-gnu/c++/13 -I/usr/include/c++/13/backward -I/usr/lib/gcc/x86_64-linux-gnu/13/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include DrawRectangle.h -o moc_DrawRectangle.cpp
@@ -3835,9 +3842,9 @@ compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h ui_BaseStationForm.h ui_SectorForm.h ui_SelectBaseStationForm.h ui_ReceiverForm.h ui_TerrainProfile.h
+compiler_uic_make_all: ui_mainwindow.h ui_BaseStationForm.h ui_SectorForm.h ui_SelectBaseStationForm.h ui_ReceiverForm.h ui_TerrainProfile.h ui_mainwindowTMP.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h ui_BaseStationForm.h ui_SectorForm.h ui_SelectBaseStationForm.h ui_ReceiverForm.h ui_TerrainProfile.h
+	-$(DEL_FILE) ui_mainwindow.h ui_BaseStationForm.h ui_SectorForm.h ui_SelectBaseStationForm.h ui_ReceiverForm.h ui_TerrainProfile.h ui_mainwindowTMP.h
 ui_mainwindow.h: mainwindow.ui \
 		../../../Qt/6.7.2/gcc_64/libexec/uic
 	/home/daniel.sucupira/Qt/6.7.2/gcc_64/libexec/uic mainwindow.ui -o ui_mainwindow.h
@@ -3861,6 +3868,10 @@ ui_ReceiverForm.h: ReceiverForm.ui \
 ui_TerrainProfile.h: TerrainProfile.ui \
 		../../../Qt/6.7.2/gcc_64/libexec/uic
 	/home/daniel.sucupira/Qt/6.7.2/gcc_64/libexec/uic TerrainProfile.ui -o ui_TerrainProfile.h
+
+ui_mainwindowTMP.h: mainwindowTMP.ui \
+		../../../Qt/6.7.2/gcc_64/libexec/uic
+	/home/daniel.sucupira/Qt/6.7.2/gcc_64/libexec/uic mainwindowTMP.ui -o ui_mainwindowTMP.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -4369,45 +4380,74 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qprogressbar.h \
 		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qframe.h \
 		ui_mainwindow.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/QVariant \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QApplication \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qapplication.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QDoubleSpinBox \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qspinbox.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		../../../Qt/6.7.2/gcc_64/include/QtGui/qvalidator.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/qregularexpression.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QFormLayout \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qformlayout.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QLayout \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qlayout.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qgridlayout.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QGraphicsView \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qgraphicsview.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qscrollarea.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qgraphicsscene.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QGridLayout \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QHBoxLayout \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QHeaderView \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qheaderview.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/qabstractitemmodel.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/qitemselectionmodel.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qstyleoption.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qslider.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractslider.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qstyle.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qtabbar.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qrubberband.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QLabel \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qlabel.h \
+		../../../Qt/6.7.2/gcc_64/include/QtGui/qpicture.h \
+		../../../Qt/6.7.2/gcc_64/include/QtGui/qtextdocument.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QMenuBar \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qmenubar.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qmenu.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QPushButton \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QRadioButton \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qradiobutton.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QSpacerItem \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QStatusBar \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qstatusbar.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QToolButton \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qtoolbutton.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QTreeWidget \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qtreewidget.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qtreeview.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qtreewidgetitemiterator.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QVBoxLayout \
 		BaseStationForm.h \
 		SectorForm.h \
 		SelectBaseStationForm.h \
 		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QMessageBox \
 		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QLabel \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qlabel.h \
-		../../../Qt/6.7.2/gcc_64/include/QtGui/qpicture.h \
-		../../../Qt/6.7.2/gcc_64/include/QtGui/qtextdocument.h \
 		../../../Qt/6.7.2/gcc_64/include/QtGui/QPixmap \
 		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
 		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QGraphicsScene \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QGraphicsView \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qgraphicsview.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qscrollarea.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractscrollarea.h \
 		ImagePainter.h \
 		../../../Qt/6.7.2/gcc_64/include/QtGui/QMouseEvent \
 		ReceiverForm.h \
 		Display/NetworkObjectWizualizator.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QTreeWidget \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qtreewidget.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qtreeview.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractitemview.h \
-		../../../Qt/6.7.2/gcc_64/include/QtCore/qabstractitemmodel.h \
-		../../../Qt/6.7.2/gcc_64/include/QtCore/qitemselectionmodel.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qstyleoption.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractspinbox.h \
-		../../../Qt/6.7.2/gcc_64/include/QtGui/qvalidator.h \
-		../../../Qt/6.7.2/gcc_64/include/QtCore/qregularexpression.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qslider.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractslider.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qstyle.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qtabbar.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qrubberband.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qtreewidgetitemiterator.h \
 		../../../Qt/6.7.2/gcc_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o mainwindow.cpp
 
@@ -5179,7 +5219,15 @@ MapDataProvider.o: MapProvider/MapDataProvider.cpp MapProvider/MapDataProvider.h
 		../../../Qt/6.7.2/gcc_64/include/QtCore/qstringliteral.h \
 		../../../Qt/6.7.2/gcc_64/include/QtCore/qstringalgorithms.h \
 		../../../Qt/6.7.2/gcc_64/include/QtCore/qscopedpointer.h \
-		../../../Qt/6.7.2/gcc_64/include/QtCore/qstringconverter_base.h
+		../../../Qt/6.7.2/gcc_64/include/QtCore/qstringconverter_base.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/QString \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/qstring.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/qlatin1stringview.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/qanystringview.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/qutf8stringview.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/qstringtokenizer.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/qstringbuilder.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/qstringconverter.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MapDataProvider.o MapProvider/MapDataProvider.cpp
 
 MapParser.o: MapProvider/MapParser.cpp MapProvider/MapParser.h \
@@ -5254,8 +5302,7 @@ MapParser.o: MapProvider/MapParser.cpp MapProvider/MapParser.h \
 		../../../Qt/6.7.2/gcc_64/include/QtCore/qstringalgorithms.h \
 		../../../Qt/6.7.2/gcc_64/include/QtCore/qscopedpointer.h \
 		../../../Qt/6.7.2/gcc_64/include/QtCore/qstringconverter_base.h \
-		../../../Qt/6.7.2/gcc_64/include/QtCore/QDebug \
-		../../../Qt/6.7.2/gcc_64/include/QtCore/qdebug.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/QString \
 		../../../Qt/6.7.2/gcc_64/include/QtCore/qstring.h \
 		../../../Qt/6.7.2/gcc_64/include/QtCore/qlatin1stringview.h \
 		../../../Qt/6.7.2/gcc_64/include/QtCore/qanystringview.h \
@@ -5263,6 +5310,8 @@ MapParser.o: MapProvider/MapParser.cpp MapProvider/MapParser.h \
 		../../../Qt/6.7.2/gcc_64/include/QtCore/qstringtokenizer.h \
 		../../../Qt/6.7.2/gcc_64/include/QtCore/qstringbuilder.h \
 		../../../Qt/6.7.2/gcc_64/include/QtCore/qstringconverter.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/QDebug \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/qdebug.h \
 		../../../Qt/6.7.2/gcc_64/include/QtCore/qcontiguouscache.h \
 		../../../Qt/6.7.2/gcc_64/include/QtCore/qsharedpointer.h \
 		../../../Qt/6.7.2/gcc_64/include/QtCore/qshareddata.h \
@@ -6740,6 +6789,29 @@ BaseStationForm.o: BaseStationForm.cpp BaseStationForm.h \
 		../../../Qt/6.7.2/gcc_64/include/QtCore/qlocale.h \
 		../../../Qt/6.7.2/gcc_64/include/QtGui/qguiapplication_platform.h \
 		ui_BaseStationForm.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/QVariant \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QAbstractButton \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QApplication \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qapplication.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QDialogButtonBox \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QDoubleSpinBox \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qspinbox.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		../../../Qt/6.7.2/gcc_64/include/QtGui/qvalidator.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/qregularexpression.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QLabel \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qlabel.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qframe.h \
+		../../../Qt/6.7.2/gcc_64/include/QtGui/qpicture.h \
+		../../../Qt/6.7.2/gcc_64/include/QtGui/qtextdocument.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QLineEdit \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qlineedit.h \
+		../../../Qt/6.7.2/gcc_64/include/QtGui/qtextcursor.h \
+		../../../Qt/6.7.2/gcc_64/include/QtGui/qtextformat.h \
+		../../../Qt/6.7.2/gcc_64/include/QtGui/qpen.h \
+		../../../Qt/6.7.2/gcc_64/include/QtGui/qtextoption.h \
 		Core/PixelXY.h \
 		Core/BaseStation.h \
 		DataProvider.h \
@@ -6962,26 +7034,13 @@ SectorForm.o: SectorForm.cpp SectorForm.h \
 		Core/BaseStation.h \
 		Core/PixelXY.h \
 		ui_SectorForm.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QFileDialog \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qfiledialog.h \
-		../../../Qt/6.7.2/gcc_64/include/QtCore/qdir.h \
-		../../../Qt/6.7.2/gcc_64/include/QtCore/qfile.h \
-		../../../Qt/6.7.2/gcc_64/include/QtCore/qfiledevice.h \
-		../../../Qt/6.7.2/gcc_64/include/QtCore/qfileinfo.h \
-		../../../Qt/6.7.2/gcc_64/include/QtCore/qdatetime.h \
-		../../../Qt/6.7.2/gcc_64/include/QtCore/qcalendar.h \
-		../../../Qt/6.7.2/gcc_64/include/QtCore/qtimezone.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QMessageBox \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qmessagebox.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QTreeWidgetItem \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qtreewidget.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qtreeview.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractitemview.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qframe.h \
-		../../../Qt/6.7.2/gcc_64/include/QtCore/qabstractitemmodel.h \
-		../../../Qt/6.7.2/gcc_64/include/QtCore/qitemselectionmodel.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/QVariant \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QAbstractButton \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QApplication \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qapplication.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QComboBox \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qcombobox.h \
 		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
 		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qstyleoption.h \
 		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractspinbox.h \
@@ -6993,6 +7052,38 @@ SectorForm.o: SectorForm.cpp SectorForm.h \
 		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qtabbar.h \
 		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qtabwidget.h \
 		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qrubberband.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qframe.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/qabstractitemmodel.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QDialogButtonBox \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QDoubleSpinBox \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qspinbox.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QLabel \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qlabel.h \
+		../../../Qt/6.7.2/gcc_64/include/QtGui/qpicture.h \
+		../../../Qt/6.7.2/gcc_64/include/QtGui/qtextdocument.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QRadioButton \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qradiobutton.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QSpinBox \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QToolButton \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qtoolbutton.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QFileDialog \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qfiledialog.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/qdir.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/qfile.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/qfiledevice.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/qfileinfo.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/qdatetime.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/qcalendar.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/qtimezone.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QMessageBox \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qmessagebox.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QTreeWidgetItem \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qtreewidget.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qtreeview.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/qitemselectionmodel.h \
 		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qtreewidgetitemiterator.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o SectorForm.o SectorForm.cpp
 
@@ -7184,6 +7275,33 @@ SelectBaseStationForm.o: SelectBaseStationForm.cpp SelectBaseStationForm.h \
 		../../../Qt/6.7.2/gcc_64/include/QtCore/qlocale.h \
 		../../../Qt/6.7.2/gcc_64/include/QtGui/qguiapplication_platform.h \
 		ui_SelectBaseStationForm.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/QVariant \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QAbstractButton \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QApplication \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qapplication.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QComboBox \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qcombobox.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qstyleoption.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		../../../Qt/6.7.2/gcc_64/include/QtGui/qvalidator.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/qregularexpression.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qslider.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractslider.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qstyle.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qtabbar.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qtabwidget.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qrubberband.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qframe.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/qabstractitemmodel.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QDialogButtonBox \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QListView \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qlistview.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/qitemselectionmodel.h \
 		DataProvider.h \
 		Core/BaseStation.h \
 		Core/PixelXY.h \
@@ -7204,23 +7322,7 @@ SelectBaseStationForm.o: SelectBaseStationForm.cpp SelectBaseStationForm.h \
 		../../../Qt/6.7.2/gcc_64/include/QtCore/QStringList \
 		../../../Qt/6.7.2/gcc_64/include/QtCore/QStringListModel \
 		../../../Qt/6.7.2/gcc_64/include/QtCore/qstringlistmodel.h \
-		../../../Qt/6.7.2/gcc_64/include/QtCore/qabstractitemmodel.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QAbstractItemView \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractitemview.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qframe.h \
-		../../../Qt/6.7.2/gcc_64/include/QtCore/qitemselectionmodel.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qstyleoption.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractspinbox.h \
-		../../../Qt/6.7.2/gcc_64/include/QtGui/qvalidator.h \
-		../../../Qt/6.7.2/gcc_64/include/QtCore/qregularexpression.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qslider.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractslider.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qstyle.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qtabbar.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qtabwidget.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qrubberband.h
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QAbstractItemView
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o SelectBaseStationForm.o SelectBaseStationForm.cpp
 
 ImagePainter.o: ImagePainter.cpp ImagePainter.h \
@@ -7919,6 +8021,23 @@ ReceiverForm.o: ReceiverForm.cpp ReceiverForm.h \
 		../../../Qt/6.7.2/gcc_64/include/QtCore/qlocale.h \
 		../../../Qt/6.7.2/gcc_64/include/QtGui/qguiapplication_platform.h \
 		ui_ReceiverForm.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/QVariant \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QAbstractButton \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QApplication \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qapplication.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QDialogButtonBox \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QDoubleSpinBox \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qspinbox.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		../../../Qt/6.7.2/gcc_64/include/QtGui/qvalidator.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/qregularexpression.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QLabel \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qlabel.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qframe.h \
+		../../../Qt/6.7.2/gcc_64/include/QtGui/qpicture.h \
+		../../../Qt/6.7.2/gcc_64/include/QtGui/qtextdocument.h \
 		DataProvider.h \
 		Core/BaseStation.h \
 		Core/PixelXY.h \
@@ -8411,7 +8530,11 @@ DrawRectangle.o: DrawRectangle.cpp DrawRectangle.h \
 		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qtwidgetsexports.h \
 		../../../Qt/6.7.2/gcc_64/include/QtCore/qcoreevent.h \
 		../../../Qt/6.7.2/gcc_64/include/QtCore/qset.h \
-		../../../Qt/6.7.2/gcc_64/include/QtCore/qhash.h
+		../../../Qt/6.7.2/gcc_64/include/QtCore/qhash.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/QObject \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/qobject.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/qobject_impl.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/qbindingstorage.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o DrawRectangle.o DrawRectangle.cpp
 
 wgs84_do_puwg92.o: MapProvider/wgs84_do_puwg92.cc 
@@ -8631,6 +8754,28 @@ TerrainProfile.o: TerrainProfile.cpp TerrainProfile.h \
 		Core/Receiver.h \
 		Throughput/ThroughputData.h \
 		ui_TerrainProfile.h \
+		../../../Qt/6.7.2/gcc_64/include/QtCore/QVariant \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QApplication \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qapplication.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QGraphicsView \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qgraphicsview.h \
+		../../../Qt/6.7.2/gcc_64/include/QtGui/qpainter.h \
+		../../../Qt/6.7.2/gcc_64/include/QtGui/qtextoption.h \
+		../../../Qt/6.7.2/gcc_64/include/QtGui/qpen.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qscrollarea.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qframe.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qgraphicsscene.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QLabel \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qlabel.h \
+		../../../Qt/6.7.2/gcc_64/include/QtGui/qpicture.h \
+		../../../Qt/6.7.2/gcc_64/include/QtGui/qtextdocument.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QVBoxLayout \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qlayout.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qgridlayout.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QWidget \
 		../../../Qt/6.7.2/gcc_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o TerrainProfile.o TerrainProfile.cpp
 
