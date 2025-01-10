@@ -95,8 +95,8 @@ private:
     QProgressBar progressBar;
 
 private slots:
-    void on_baseStationUi_clicked();
-    void on_sectorUI_clliced();
+    void baseStationUi_clicked();
+    void sectorUI_clliced();
 
     void selectBase();
     void drawImage(std::vector<std::pair<PixelXY,double>>&);

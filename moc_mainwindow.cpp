@@ -46,8 +46,8 @@ constexpr auto qt_meta_stringdata_CLASSMainWindowENDCLASS = QtMocHelpers::string
     "progress",
     "setProgressBarRange",
     "max",
-    "on_baseStationUi_clicked",
-    "on_sectorUI_clliced",
+    "baseStationUi_clicked",
+    "sectorUI_clliced",
     "selectBase",
     "drawImage",
     "drawInterferenceImage",
@@ -167,9 +167,9 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         // method 'setProgressBarRange'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<unsigned , std::false_type>,
-        // method 'on_baseStationUi_clicked'
+        // method 'baseStationUi_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_sectorUI_clliced'
+        // method 'sectorUI_clliced'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'selectBase'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
@@ -228,8 +228,8 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 2: _t->drawDataMap(); break;
         case 3: _t->updateProgressBar((*reinterpret_cast< std::add_pointer_t<uint>>(_a[1]))); break;
         case 4: _t->setProgressBarRange((*reinterpret_cast< std::add_pointer_t<uint>>(_a[1]))); break;
-        case 5: _t->on_baseStationUi_clicked(); break;
-        case 6: _t->on_sectorUI_clliced(); break;
+        case 5: _t->baseStationUi_clicked(); break;
+        case 6: _t->sectorUI_clliced(); break;
         case 7: _t->selectBase(); break;
         case 8: _t->drawImage((*reinterpret_cast< std::add_pointer_t<std::vector<std::pair<PixelXY,double>>&>>(_a[1]))); break;
         case 9: _t->drawInterferenceImage((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;

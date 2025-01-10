@@ -56,7 +56,7 @@ MainWindow::MainWindow(DataProvider& p_data, std::shared_ptr<IMapDataProvider> p
 
     connect(ui->calculatePushButton, SIGNAL(pressed()), this, SIGNAL(calculationButtonPressed()));
 
-    connect(ui->baseToolButton, SIGNAL(pressed()), this, SLOT(on_baseStationUi_clicked()));
+    connect(ui->baseToolButton, SIGNAL(pressed()), this, SLOT(baseStationUi_clicked()));
     connect(ui->sectorToolButton, SIGNAL(pressed()), this, SLOT(selectBase()));
     connect(ui->receiverButton, SIGNAL(pressed()), this, SLOT(receiverClicked()));
     connect(ui->minimumRSRSPdoubleSpinBox, SIGNAL(valueChanged(double)), this, SLOT(changeMinRSRPValueInData(double)));
@@ -109,7 +109,7 @@ void MainWindow::addMenu()
     mainMenu->addAction(tr("&Quit"), this, SLOT(close()));
 
     //QMainWindow::menuBar()->addMenu(tools);
-    //tools->addAction(tr("&Add Base Station"), this, SLOT(on_baseStationUi_clicked()), tr("Ctrl+B"));
+    //tools->addAction(tr("&Add Base Station"), this, SLOT(baseStationUi_clicked()), tr("Ctrl+B"));
 }
 
 void MainWindow::drawImage(std::vector<std::pair<PixelXY,double>>& p_pixelData)
@@ -321,7 +321,7 @@ void MainWindow::selectBase()
     if(!selectBaseStation)
     {
         selectBaseStation = std::make_unique<SelectBaseStationForm>(data, this);
-        connect(selectBaseStation.get(), SIGNAL(baseStationSelected()), this, SLOT(on_sectorUI_clliced()));
+        connect(selectBaseStation.get(), SIGNAL(baseStationSelected()), this, SLOT(sectorUI_clliced()));
     }
     else
     {
@@ -402,7 +402,7 @@ BaseStations::iterator MainWindow::getIndexOfBaseStation()
     return it;
 }
 
-void MainWindow::on_baseStationUi_clicked()
+void MainWindow::baseStationUi_clicked()
 {
     baseStationForm = std::make_unique<BaseStationForm>(geoConverter, data, this);
     connect(baseStationForm.get(), SIGNAL(baseStationCreated()), this, SLOT(drawBaseStationPossition()));
@@ -410,7 +410,7 @@ void MainWindow::on_baseStationUi_clicked()
     baseStationForm->show();
 }
 
-void MainWindow::on_sectorUI_clliced()
+void MainWindow::sectorUI_clliced()
 {
     if (baseStationForm)
     {

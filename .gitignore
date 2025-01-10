@@ -2,3 +2,7 @@
 .qmake.stash
 .qtc_clangd/
 *.o
+rsrp.txt
+rsrq.txt
+snir.txt
+throughput.txt
