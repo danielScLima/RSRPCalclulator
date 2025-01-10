@@ -55,6 +55,11 @@ void SelectBaseStationForm::update()
 
     ui->baseListView->setEditTriggers(QAbstractItemView::AnyKeyPressed |
                                       QAbstractItemView::DoubleClicked);
+
+    // Conectar o sinal de clique do QListView
+    connect(ui->baseListView, &QListView::clicked, [this](const QModelIndex &index) {
+        ui->comboBox->setCurrentIndex(index.row());
+    });
 }
 
 void SelectBaseStationForm::commit()
