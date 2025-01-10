@@ -30,7 +30,12 @@ void Worker::doCalculation()
         return;
     }
     initializeThrouputData();
-    future = QtConcurrent::run(this, &Worker::makeQueueOfCalculationTaskAndRun);
+
+    // future = QtConcurrent::run(this, &Worker::makeQueueOfCalculationTaskAndRun);
+    future = QtConcurrent::run([this]() {
+        this->makeQueueOfCalculationTaskAndRun();
+    });
+
 }
 
 void Worker::makeQueueOfCalculationTaskAndRun()

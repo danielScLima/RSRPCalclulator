@@ -3,6 +3,8 @@
 #include <functional>
 #include "Common/FrequencyBands.h"
 
+#include <string>
+
 class Antenna
 {
 public:

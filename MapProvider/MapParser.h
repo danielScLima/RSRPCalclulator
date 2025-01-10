@@ -5,6 +5,8 @@
 #include <vector>
 #include <QTextStream>
 
+#include <QString>
+
 using pixel_Map = std::vector<std::vector<Pixel>>;
 
 class MapParser

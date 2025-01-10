@@ -2,6 +2,8 @@
 #define DRAWRECTANGLE_H
 #include "Rectangle.h"
 #include <QGraphicsSceneMouseEvent>
+#include <QObject>
+
 
 class DrawRectangle : public QObject
 {
