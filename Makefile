@@ -4388,20 +4388,16 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractspinbox.h \
 		../../../Qt/6.7.2/gcc_64/include/QtGui/qvalidator.h \
 		../../../Qt/6.7.2/gcc_64/include/QtCore/qregularexpression.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QFormLayout \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qformlayout.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QLayout \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qlayout.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qboxlayout.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qgridlayout.h \
 		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QGraphicsView \
 		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qgraphicsview.h \
 		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qscrollarea.h \
 		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractscrollarea.h \
 		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qgraphicsscene.h \
-		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QGridLayout \
 		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QHBoxLayout \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qlayout.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qgridlayout.h \
 		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QHeaderView \
 		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qheaderview.h \
 		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qabstractitemview.h \
@@ -4426,6 +4422,8 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QRadioButton \
 		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qradiobutton.h \
 		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QSpacerItem \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QSplitter \
+		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qsplitter.h \
 		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QStatusBar \
 		../../../Qt/6.7.2/gcc_64/include/QtWidgets/qstatusbar.h \
 		../../../Qt/6.7.2/gcc_64/include/QtWidgets/QToolButton \
