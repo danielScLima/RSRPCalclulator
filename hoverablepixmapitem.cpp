@@ -1,4 +1,5 @@
 #include "hoverablepixmapitem.h"
+
 #include <QGraphicsSceneHoverEvent>
 #include <QDebug>
 
@@ -11,19 +12,23 @@ HoverablePixmapItem::HoverablePixmapItem(const QPixmap& pixmap, const QString& t
 void HoverablePixmapItem::hoverEnterEvent(QGraphicsSceneHoverEvent* event)
 {
     if (!tooltip) {
-        tooltip = std::make_unique<QGraphicsTextItem>(tooltipText); // Cria texto com smart pointer
-        scene->addItem(tooltip.get());                             // Adiciona à cena
-        tooltip->setDefaultTextColor(Qt::black);                   // Configura cor do texto
-        tooltip->setPos(event->scenePos());                        // Define posição do texto
+        tooltip = new QGraphicsSimpleTextItem(tooltipText); // Cria o texto
+        tooltip->setZValue(1);                              // Garante que está acima de outros itens
+        tooltip->setPos(event->scenePos());                // Define posição inicial
+        tooltip->setBrush(Qt::black);                      // Define a cor
+        scene->addItem(tooltip);                           // Adiciona à cena
     }
-    QGraphicsPixmapItem::hoverEnterEvent(event); // Chama evento base
+    qDebug() << "Tooltip created at:" << event->scenePos();
+    QGraphicsPixmapItem::hoverEnterEvent(event);           // Chama evento base
 }
 
 void HoverablePixmapItem::hoverLeaveEvent(QGraphicsSceneHoverEvent* event)
 {
     if (tooltip) {
-        scene->removeItem(tooltip.get()); // Remove o texto da cena
-        tooltip.reset();                  // Libera automaticamente o ponteiro
+        qDebug() << "Removing tooltip.";
+        scene->removeItem(tooltip); // Remove o texto da cena
+        delete tooltip;             // Deleta o item de texto
+        tooltip = nullptr;          // Evita ponteiro pendente
     }
-    QGraphicsPixmapItem::hoverLeaveEvent(event); // Chama evento base
+    QGraphicsPixmapItem::hoverLeaveEvent(event);           // Chama evento base
 }
