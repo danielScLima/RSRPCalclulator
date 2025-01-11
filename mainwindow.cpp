@@ -18,6 +18,7 @@
 #include "Rectangle.h"
 #include "Display/NetworkObjectWizualizator.h"
 #include <QDebug>
+#include "hoverablepixmapitem.h"
 
 MainWindow::MainWindow(DataProvider& p_data, std::shared_ptr<IMapDataProvider> p_mapData, QWidget * parent) :
     QMainWindow(parent),
@@ -276,12 +277,27 @@ void MainWindow::drawTerrainLine()
 
 void MainWindow::drawBaseStationPossition()
 {
-    QPixmap img;
+    /*QPixmap img;
     img.load(":/obrazki/baseStation");
     for(const auto& base : data.baseStations)
     {
         QGraphicsItem* item = scene->addPixmap(img);
         item->setPos(base->getPossition().first, base->getPossition().second);
+    }
+    ui->mapGraphicsView->setScene(scene);
+    ui->mapGraphicsView->show();
+    networkWizualizator->update();*/
+
+    QPixmap img;
+    img.load(":/obrazki/baseStation");
+    int index = 0;
+    for (const auto& base : data.baseStations)
+    {
+        // Cria um item "hoverable"
+        QString tooltipText = QString("Base Station ID: %1").arg(index++);
+        HoverablePixmapItem* item = new HoverablePixmapItem(img, tooltipText, scene);
+        item->setPos(base->getPossition().first, base->getPossition().second);
+        scene->addItem(item);
     }
     ui->mapGraphicsView->setScene(scene);
     ui->mapGraphicsView->show();

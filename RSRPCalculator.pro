@@ -19,6 +19,7 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
+    hoverablepixmapitem.cpp \
         mainwindow.cpp \
     Pathloss/Parameter.cpp \
     Pathloss/PathlossModel.cpp \
@@ -141,7 +142,8 @@ HEADERS  += mainwindow.h \
     Workers/PixelWorkerForRsrq.h \
     Core/Controler.h \
     Throughput/ThroughputData.h \
-    Throughput/ThroughputCalculator.h
+    Throughput/ThroughputCalculator.h \
+    hoverablepixmapitem.h
 
 FORMS    += mainwindow.ui \
     BaseStationForm.ui \
